@@ -1,0 +1,108 @@
+:root {
+  /* Colors - Deep Earth/Space Theme */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111625;
+  --accent-primary: #00f0ff; /* Cyber Cyan */
+  --accent-secondary: #7000ff; /* Deep Neon Purple */
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --success: #00ff9d;
+  --warning: #ffb800;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(17, 22, 37, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --backdrop-blur: blur(12px);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  padding: var(--space-md);
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--space-sm);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--accent-secondary);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-primary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px var(--accent-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-glass);
+  border-radius: 4px;
+}
